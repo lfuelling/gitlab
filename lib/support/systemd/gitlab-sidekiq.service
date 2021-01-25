@@ -1,0 +1,18 @@
+[Unit]
+Description=GitLab Sidekiq Queue
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+User=git
+Group=git
+WorkingDirectory=/var/opt/gitlab/gitlab
+Environment=RAILS_ENV=production
+ExecStart=/var/opt/gitlab/gitlab/bin/sidekiq-cluster "* * * * * * * *" -P /var/opt/gitlab/gitlab/tmp/pids/sidekiq-cluster.pid -e $RAILS_ENV
+Restart=always
+RestartSec=2
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target

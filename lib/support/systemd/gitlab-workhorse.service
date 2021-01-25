@@ -1,0 +1,18 @@
+[Unit]
+Description=GitLab Workhorse
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+User=git
+Group=git
+WorkingDirectory=/var/opt/gitlab/gitlab-workhorse/
+Environment=RAILS_ENV=production
+ExecStart=/var/opt/gitlab/gitlab-workhorse/gitlab-workhorse -listenUmask 0 -listenNetwork unix -listenAddr /var/opt/gitlab/gitlab/tmp/sockets/gitlab-workhorse.socket -authBackend http://127.0.0.1:8080 -authSocket /var/opt/gitlab/gitlab/tmp/sockets/gitlab.socket -documentRoot /var/opt/gitlab/gitlab/public
+Restart=always
+RestartSec=2
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target

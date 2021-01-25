@@ -1,0 +1,18 @@
+[Unit]
+Description=GitLab Gitaly
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+User=git
+Group=git
+WorkingDirectory=/var/opt/gitlab/gitaly
+Environment=RAILS_ENV=production
+ExecStart=/var/opt/gitlab/gitaly/gitaly /var/opt/gitlab/gitaly/config.toml
+Restart=always
+RestartSec=2
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
