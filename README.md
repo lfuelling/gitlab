@@ -11,7 +11,7 @@ My own modified fork of GitLab.
 
 This documentation is customized to my needs. If you want to use this, you should at least read the [official documentation](https://docs.gitlab.com/ee/install/installation.html) before pressing any buttons.
 
-**Currently all commands are set up to install v13.8! Everything is run as `root`.**
+**Currently all commands are set up to install v13.8! Everything is run as `root`, you need the `backports` repo on Debian.**
 
 1. Install dependencies
     - `apt install sudo libimage-exiftool-perl graphicsmagick zlib1g-dev libyaml-dev libssl-dev libgdbm-dev libre2-dev libreadline-dev libncurses5-dev libffi-dev curl openssh-server checkinstall libxml2-dev libxslt-dev libcurl4-openssl-dev libicu-dev logrotate rsync python-docutils pkg-config cmake runit libcurl4-openssl-dev libexpat1-dev gettext libz-dev libssl-dev libpcre2-dev build-essential`
