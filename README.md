@@ -22,14 +22,14 @@ This documentation is customized to my needs. If you want to use this, you shoul
 3. Install Ruby
     - `mkdir /tmp/ruby && cd /tmp/ruby`
     - `curl --remote-name --progress-bar "https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.2.tar.gz"`
-    - `echo 'cb9731a17487e0ad84037490a6baf8bfa31a09e8  ruby-2.7.2.tar.gz' | shasum -c - && tar xzf ruby-2.7.2.tar.gz`
+    - `tar xzf ruby-2.7.2.tar.gz`
     - `cd ruby-2.7.2`
     - `./configure --disable-install-rdoc`
     - `make && make install`
 4. Install Go
     - `cd ~`
     - `curl --remote-name --progress-bar "https://dl.google.com/go/go1.15.7.linux-amd64.tar.gz"`
-    - `echo '0d142143794721bb63ce6c8a6180c4062bcf8ef4715e7d6d6609f3a8282629b3  go1.15.7.linux-amd64.tar.gz' | shasum -a256 -c - && sudo tar -C /usr/local -xzf go1.15.7.linux-amd64.tar.gz`
+    - `tar -C /usr/local -xzf go1.15.7.linux-amd64.tar.gz`
     - `ln -svf /usr/local/go/bin/{go,godoc,gofmt} /usr/local/bin/`
     - `rm go1.15.7.linux-amd64.tar.gz`
 5. Install NodeJS and yarn
