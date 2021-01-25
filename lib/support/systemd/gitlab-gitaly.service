@@ -7,9 +7,9 @@ StartLimitIntervalSec=0
 Type=simple
 User=git
 Group=git
-WorkingDirectory=/var/opt/gitlab/gitaly
+WorkingDirectory=/home/git/gitaly
 Environment=RAILS_ENV=production
-ExecStart=/var/opt/gitlab/gitaly/gitaly /var/opt/gitlab/gitaly/config.toml
+ExecStart=/home/git/gitaly/gitaly /home/git/gitaly/config.toml
 Restart=always
 RestartSec=2
 KillMode=process

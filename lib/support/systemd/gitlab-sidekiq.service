@@ -7,9 +7,9 @@ StartLimitIntervalSec=0
 Type=simple
 User=git
 Group=git
-WorkingDirectory=/var/opt/gitlab/gitlab
+WorkingDirectory=/home/git/gitlab
 Environment=RAILS_ENV=production
-ExecStart=/var/opt/gitlab/gitlab/bin/sidekiq-cluster "* * * * * * * *" -P /var/opt/gitlab/gitlab/tmp/pids/sidekiq-cluster.pid -e $RAILS_ENV
+ExecStart=/home/git/gitlab/bin/sidekiq-cluster "* * * * * * * *" -P /home/git/gitlab/tmp/pids/sidekiq-cluster.pid -e $RAILS_ENV
 Restart=always
 RestartSec=2
 KillMode=process

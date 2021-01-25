@@ -7,10 +7,10 @@ StartLimitIntervalSec=0
 Type=simple
 User=git
 Group=git
-WorkingDirectory=/var/opt/gitlab/gitlab
+WorkingDirectory=/home/git/gitlab
 Environment=RAILS_ENV=production
 Environment=USE_WEB_SERVER=puma
-ExecStart=/var/opt/gitlab/gitlab/bin/web_puma start_foreground
+ExecStart=/home/git/gitlab/bin/web_puma start_foreground
 Restart=always
 RestartSec=2
 KillMode=process

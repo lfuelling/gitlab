@@ -7,9 +7,9 @@ StartLimitIntervalSec=0
 Type=simple
 User=git
 Group=git
-WorkingDirectory=/var/opt/gitlab/gitlab
+WorkingDirectory=/home/git/gitlab
 Environment=RAILS_ENV=production
-ExecStart=/usr/local/bin/bundle exec mail_room --log-exit-as json -q -c /var/opt/gitlab/gitlab/config/mail_room.yml
+ExecStart=/usr/local/bin/bundle exec mail_room --log-exit-as json -q -c /home/git/gitlab/config/mail_room.yml
 Restart=always
 RestartSec=2
 KillMode=process
