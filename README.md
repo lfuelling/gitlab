@@ -146,3 +146,14 @@ This documentation is customized to my needs. If you want to use this, you shoul
         - `user.password_confirmation = 'secret_pass'`
         - `user.send_only_admin_changed_your_password_notification!`
         - `user.save!`
+
+## Troubleshooting
+
+### Restarting all the services
+```
+systemctl restart gitlab-gitaly
+systemctl restart gitlab-mailroom
+systemctl restart gitlab-puma
+systemctl restart gitlab-sidekiq
+systemctl restart gitlab-workhorse
+```
