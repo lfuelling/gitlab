@@ -120,6 +120,7 @@ This documentation is customized to my needs. If you want to use this, you shoul
     - `cp lib/support/systemd/gitlab-puma.service /etc/systemd/system/gitlab-puma.service`
     - `cp lib/support/systemd/gitlab-sidekiq.service /etc/systemd/system/gitlab-sidekiq.service`
     - `cp lib/support/systemd/gitlab-workhorse.service /etc/systemd/system/gitlab-workhorse.service`
+    - `systemctl daemon-reload`
     - `systemctl enable gitlab-gitaly`
     - `systemctl enable gitlab-mailroom`
     - `systemctl enable gitlab-puma`
