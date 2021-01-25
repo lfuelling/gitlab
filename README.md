@@ -104,7 +104,7 @@ This documentation is customized to my needs. If you want to use this, you shoul
     - `chmod 0700 /home/git/gitlab/tmp/sockets/private`
     - `chown git /home/git/gitlab/tmp/sockets/private`
     - Editor: `sudo -u git -H editor /home/git/gitaly/config.toml`
-    - `cp lib/support/systemd/gitlab-gitaly.service /etc/systemd/gitlab-gitaly.service`
+    - `cp lib/support/systemd/gitlab-gitaly.service /etc/systemd/system/gitlab-gitaly.service`
     - `systemctl daemon-reload && systemctl start gitlab-gitaly`
 13. Initialize Database
     - `sudo -u git -H bundle exec rake gitlab:setup RAILS_ENV=production`
@@ -115,11 +115,11 @@ This documentation is customized to my needs. If you want to use this, you shoul
     - `sudo -u git -H yarn install --production --pure-lockfile`
     - `sudo -u git -H bundle exec rake gitlab:assets:compile RAILS_ENV=production NODE_ENV=production`
 16. Set up systemd
-    - `cp lib/support/systemd/gitlab-gitaly.service /etc/systemd/gitlab-gitaly.service`
-    - `cp lib/support/systemd/gitlab-mailroom.service /etc/systemd/gitlab-mailroom.service`
-    - `cp lib/support/systemd/gitlab-puma.service /etc/systemd/gitlab-puma.service`
-    - `cp lib/support/systemd/gitlab-sidekiq.service /etc/systemd/gitlab-sidekiq.service`
-    - `cp lib/support/systemd/gitlab-workhorse.service /etc/systemd/gitlab-workhorse.service`
+    - `cp lib/support/systemd/gitlab-gitaly.service /etc/systemd/system/gitlab-gitaly.service`
+    - `cp lib/support/systemd/gitlab-mailroom.service /etc/systemd/system/gitlab-mailroom.service`
+    - `cp lib/support/systemd/gitlab-puma.service /etc/systemd/system/gitlab-puma.service`
+    - `cp lib/support/systemd/gitlab-sidekiq.service /etc/systemd/system/gitlab-sidekiq.service`
+    - `cp lib/support/systemd/gitlab-workhorse.service /etc/systemd/system/gitlab-workhorse.service`
     - `systemctl enable gitlab-gitaly`
     - `systemctl enable gitlab-mailroom`
     - `systemctl enable gitlab-puma`
