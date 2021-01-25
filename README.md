@@ -1,123 +1,140 @@
 # GitLab
 
-## Canonical source
+My own modified fork of GitLab.
 
-The canonical source of GitLab where all development takes place is [hosted on GitLab.com](https://gitlab.com/gitlab-org/gitlab).
+## Features (other than upstream)
+- systemd support
+- night mode by default
+- streamlined setup
 
-If you wish to clone a copy of GitLab without proprietary code, you can use the read-only mirror of GitLab located at https://gitlab.com/gitlab-org/gitlab-foss/. However, please do not submit any issues and/or merge requests to that project.
+## How to install
 
-## Free trial
+This documentation is customized to my needs. If you want to use this, you should at least read the [official documentation](https://docs.gitlab.com/ee/install/installation.html) before pressing any buttons.
 
-You can request a free trial of GitLab Ultimate [on our website](https://about.gitlab.com/free-trial/).
+**Currently all commands are set up to install v13.8! Everything is run as `root`.**
 
-## Open source software to collaborate on code
-
-To see how GitLab looks please see the [features page on our website](https://about.gitlab.com/features/).
-
-- Manage Git repositories with fine grained access controls that keep your code secure
-- Perform code reviews and enhance collaboration with merge requests
-- Complete continuous integration (CI) and continuous deployment/delivery (CD) pipelines to build, test, and deploy your applications
-- Each project can also have an issue tracker, issue board, and a wiki
-- Used by more than 100,000 organizations, GitLab is the most popular solution to manage Git repositories on-premises
-- Completely free and open source (MIT Expat license)
-
-## Editions
-
-There are two editions of GitLab:
-
-- GitLab Community Edition (CE) is available freely under the MIT Expat license.
-- GitLab Enterprise Edition (EE) includes [extra features](https://about.gitlab.com/pricing/#compare-options) that are more useful for organizations with more than 100 users. To use EE and get official support please [become a subscriber](https://about.gitlab.com/pricing/).
-
-## Licensing
-
-See the [LICENSE](LICENSE) file for licensing information as it pertains to
-files in this repository.
-
-## Hiring
-
-We're hiring developers, support people, and production engineers all the time, please see our [jobs page](https://about.gitlab.com/jobs/).
-
-## Website
-
-On [about.gitlab.com](https://about.gitlab.com/) you can find more information about:
-
-- [Subscriptions](https://about.gitlab.com/pricing/)
-- [Consultancy](https://about.gitlab.com/consultancy/)
-- [Community](https://about.gitlab.com/community/)
-- [Hosted GitLab.com](https://about.gitlab.com/gitlab-com/) use GitLab as a free service
-- [GitLab Enterprise Edition](https://about.gitlab.com/features/#enterprise) with additional features aimed at larger organizations.
-- [GitLab CI](https://about.gitlab.com/gitlab-ci/) a continuous integration (CI) server that is easy to integrate with GitLab.
-
-## Requirements
-
-Please see the [requirements documentation](doc/install/requirements.md) for system requirements and more information about the supported operating systems.
-
-## Installation
-
-The recommended way to install GitLab is with the [Omnibus packages](https://about.gitlab.com/downloads/) on our package server.
-Compared to an installation from source, this is faster and less error prone.
-Just select your operating system, download the respective package (Debian or RPM) and install it using the system's package manager.
-
-There are various other options to install GitLab, please refer to the [installation page on the GitLab website](https://about.gitlab.com/installation/) for more information.
-
-## Contributing
-
-GitLab is an open source project and we are very happy to accept community contributions. Please refer to [Contributing to GitLab page](https://about.gitlab.com/contributing/) for more details.
-
-## Install a development environment
-
-To work on GitLab itself, we recommend setting up your development environment with [the GitLab Development Kit](https://gitlab.com/gitlab-org/gitlab-development-kit).
-If you do not use the GitLab Development Kit you need to install and setup all the dependencies yourself, this is a lot of work and error prone.
-One small thing you also have to do when installing it yourself is to copy the example development Unicorn configuration file:
-
-    cp config/unicorn.rb.example.development config/unicorn.rb
-
-Instructions on how to start GitLab and how to run the tests can be found in the [getting started section of the GitLab Development Kit](https://gitlab.com/gitlab-org/gitlab-development-kit#getting-started).
-
-## Software stack
-
-GitLab is a Ruby on Rails application that runs on the following software:
-
-- Ubuntu/Debian/CentOS/RHEL/OpenSUSE
-- Ruby (MRI) 2.7.2
-- Git 2.24+
-- Redis 4.0+
-- PostgreSQL 11+
-
-For more information please see the [architecture](https://docs.gitlab.com/ee/development/architecture.html) and [requirements](https://docs.gitlab.com/ee/install/requirements.html) documentation.
-
-## UX design
-
-Please adhere to the [UX Guide](doc/development/ux_guide/index.md) when creating designs and implementing code.
-
-## Third-party applications
-
-There are a lot of [third-party applications integrating with GitLab](https://about.gitlab.com/applications/). These include GUI Git clients, mobile applications and API wrappers for various languages.
-
-## GitLab release cycle
-
-For more information about the release process see the [release documentation](https://gitlab.com/gitlab-org/release-tools/blob/master/README.md).
-
-## Upgrading
-
-For upgrading information please see our [update page](https://about.gitlab.com/update/).
-
-## Documentation
-
-All documentation can be found on <https://docs.gitlab.com>.
-
-## Getting help
-
-Please see [Getting help for GitLab](https://about.gitlab.com/getting-help/) on our website for the many options to get help.
-
-## Why?
-
-[Read here](https://about.gitlab.com/why/)
-
-## Is it any good?
-
-[Yes](https://about.gitlab.com/is-it-any-good/)
-
-## Is it awesome?
-
-[These people](https://twitter.com/gitlab/likes) seem to like it.
+1. Install dependencies
+    - `apt install sudo libimage-exiftool-perl graphicsmagick zlib1g-dev libyaml-dev libssl-dev libgdbm-dev libre2-dev libreadline-dev libncurses5-dev libffi-dev curl openssh-server checkinstall libxml2-dev libxslt-dev libcurl4-openssl-dev libicu-dev logrotate rsync python-docutils pkg-config cmake runit libcurl4-openssl-dev libexpat1-dev gettext libz-dev libssl-dev libpcre2-dev build-essential`
+2. Install the `git` version provided by `gitaly`:
+    - `git clone https://gitlab.com/gitlab-org/gitaly.git -b 13-8-stable /tmp/gitaly`
+    - `cd /tmp/gitaly`
+    - `make git GIT_PREFIX=/usr/local`
+3. Install Ruby
+    - `mkdir /tmp/ruby && cd /tmp/ruby`
+    - `curl --remote-name --progress-bar "https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.2.tar.gz"`
+    - `echo 'cb9731a17487e0ad84037490a6baf8bfa31a09e8  ruby-2.7.2.tar.gz' | shasum -c - && tar xzf ruby-2.7.2.tar.gz`
+    - `cd ruby-2.7.2`
+    - `./configure --disable-install-rdoc`
+    - `make && make install`
+4. Install Go
+    - `cd ~`
+    - `curl --remote-name --progress-bar "https://dl.google.com/go/go1.15.7.linux-amd64.tar.gz"`
+    - `echo '0d142143794721bb63ce6c8a6180c4062bcf8ef4715e7d6d6609f3a8282629b3  go1.15.7.linux-amd64.tar.gz' | shasum -a256 -c - && sudo tar -C /usr/local -xzf go1.15.7.linux-amd64.tar.gz`
+    - `ln -svf /usr/local/go/bin/{go,godoc,gofmt} /usr/local/bin/`
+    - `rm go1.15.7.linux-amd64.tar.gz`
+5. Install NodeJS and yarn
+    - `curl --location "https://deb.nodesource.com/setup_14.x" | sudo bash -`
+    - `curl --silent --show-error "https://dl.yarnpkg.com/debian/pubkey.gpg" | sudo apt-key add -`
+    - `echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list`
+    - `apt-get update && apt-get install nodejs yarn`
+6. Add `git` user
+    - `adduser --disabled-login --gecos 'GitLab' git`
+7. Install and configure PostgreSQL
+    - `apt install -y postgresql postgresql-client libpq-dev postgresql-contrib`
+    - `systemctl start postgresql`
+    - `sudo -u postgres psql -d template1 -c "CREATE USER git CREATEDB;"`
+    - `sudo -u postgres psql -d template1 -c "CREATE EXTENSION IF NOT EXISTS pg_trgm;"`
+    - `sudo -u postgres psql -d template1 -c "CREATE EXTENSION IF NOT EXISTS btree_gist;"`
+    - `sudo -u postgres psql -d template1 -c "CREATE DATABASE gitlabhq_production OWNER git;"`
+    - `sudo -u git -H psql -d gitlabhq_production`
+        - `SELECT true AS enabled FROM pg_available_extensions WHERE name = 'pg_trgm' AND installed_version IS NOT NULL; SELECT true AS enabled FROM pg_available_extensions WHERE name = 'btree_gist' AND installed_version IS NOT NULL;`
+8. Install and configure Redis
+    - `apt-get install redis-server`
+    - `cp /etc/redis/redis.conf /etc/redis/redis.conf.orig`
+    - `sed 's/^port .*/port 0/' /etc/redis/redis.conf.orig | tee /etc/redis/redis.conf`
+    - `echo 'unixsocket /var/run/redis/redis.sock' | tee -a /etc/redis/redis.conf`
+    - `echo 'unixsocketperm 770' | tee -a /etc/redis/redis.conf`
+    - `mkdir -p /var/run/redis`
+    - `chown redis:redis /var/run/redis`
+    - `chmod 755 /var/run/redis`
+    - `echo 'd  /var/run/redis  0755  redis  redis  10d  -' | sudo tee -a /etc/tmpfiles.d/redis.conf`
+    - `usermod -aG redis git`
+    - `systemctl restart redis-server`
+9. Install GitLab itself
+    - `cd /home/git`
+    - `sudo -u git -H git clone https://github.com/lfuelling/gitlab.git -b 13-8-stable gitlab`
+    - `cd /home/git/gitlab`
+    - `sudo -u git -H cp config/gitlab.yml.example config/gitlab.yml`
+    - Editor: `sudo -u git -H editor config/gitlab.yml`
+    - `sudo -u git -H cp config/secrets.yml.example config/secrets.yml`
+    - `sudo -u git -H chmod 0600 config/secrets.yml`
+    - `chown -R git log/`
+    - `chown -R git tmp/`
+    - `chmod -R u+rwX,go-w log/`
+    - `chmod -R u+rwX tmp/`
+    - `chmod -R u+rwX tmp/pids/`
+    - `chmod -R u+rwX tmp/sockets/`
+    - `sudo -u git -H mkdir -p public/uploads/`
+    - `chmod 0700 public/uploads`
+    - `chmod -R u+rwX builds/`
+    - `chmod -R u+rwX shared/artifacts/`
+    - `chmod -R ug+rwX shared/pages/`
+    - `sudo -u git -H cp config/puma.rb.example config/puma.rb`
+    - Editor: `sudo -u git -H editor config/puma.rb`
+    - `sudo -u git -H git config --global core.autocrlf input`
+    - `sudo -u git -H git config --global gc.auto 0`
+    - `sudo -u git -H git config --global repack.writeBitmaps true`
+    - `sudo -u git -H git config --global receive.advertisePushOptions true`
+    - `sudo -u git -H git config --global core.fsyncObjectFiles true`
+    - `sudo -u git -H cp config/resque.yml.example config/resque.yml`
+    - Editor: `sudo -u git -H editor config/resque.yml`
+    - `sudo -u git cp config/database.yml.postgresql config/database.yml`
+    - Editor: `sudo -u git -H editor config/database.yml`
+        - If you use PostgreSQL via socket, it's enough to delete `host`, `username` and `password`
+    - `sudo -u git -H chmod o-rwx config/database.yml`
+    - `sudo -u git -H bundle install --deployment --without development test mysql aws kerberos`
+10. Install and configure GitLab Shell
+    - `sudo -u git -H bundle exec rake gitlab:shell:install RAILS_ENV=production`
+    - Editor: `sudo -u git -H editor /home/git/gitlab-shell/config.yml`
+11. Install and configure GitLab Workhorse
+    - `sudo -u git -H bundle exec rake "gitlab:workhorse:install[/home/git/gitlab-workhorse]" RAILS_ENV=production`
+12. Install and configure Gitaly
+    - `cd /home/git/gitlab`
+    - `sudo -u git -H bundle exec rake "gitlab:gitaly:install[/home/git/gitaly,/home/git/repositories]" RAILS_ENV=production`
+    - `chmod 0700 /home/git/gitlab/tmp/sockets/private`
+    - `chown git /home/git/gitlab/tmp/sockets/private`
+    - Editor: `sudo -u git -H editor /home/git/gitaly/config.toml`
+    - `cp lib/support/systemd/gitlab-gitaly.service /etc/systemd/gitlab-gitaly.service`
+    - `systemctl daemon-reload && systemctl start gitlab-gitaly`
+13. Initialize Database
+    - `sudo -u git -H bundle exec rake gitlab:setup RAILS_ENV=production`
+14. Set up Logrotate
+    - `sudo cp lib/support/logrotate/gitlab /etc/logrotate.d/gitlab`
+15. Precompile stuff
+    - `sudo -u git -H bundle exec rake gettext:compile RAILS_ENV=production`
+    - `sudo -u git -H yarn install --production --pure-lockfile`
+    - `sudo -u git -H bundle exec rake gitlab:assets:compile RAILS_ENV=production NODE_ENV=production`
+16. Set up systemd
+    - `cp lib/support/systemd/gitlab-gitaly.service /etc/systemd/gitlab-gitaly.service`
+    - `cp lib/support/systemd/gitlab-mailroom.service /etc/systemd/gitlab-mailroom.service`
+    - `cp lib/support/systemd/gitlab-puma.service /etc/systemd/gitlab-puma.service`
+    - `cp lib/support/systemd/gitlab-sidekiq.service /etc/systemd/gitlab-sidekiq.service`
+    - `cp lib/support/systemd/gitlab-workhorse.service /etc/systemd/gitlab-workhorse.service`
+    - `systemctl enable gitlab-gitaly`
+    - `systemctl enable gitlab-mailroom`
+    - `systemctl enable gitlab-puma`
+    - `systemctl enable gitlab-sidekiq`
+    - `systemctl enable gitlab-workhorse`
+    - `systemctl start gitlab-gitaly`
+    - `systemctl start gitlab-mailroom`
+    - `systemctl start gitlab-puma`
+    - `systemctl start gitlab-sidekiq`
+    - `systemctl start gitlab-workhorse`
+17. Install and configure NGINX
+    - `apt install nginx`
+    - `cp lib/support/nginx/gitlab /etc/nginx/sites-available/gitlab`
+    - `ln -s /etc/nginx/sites-available/gitlab /etc/nginx/sites-enabled/gitlab`
+    - Editor: `editor /etc/nginx/sites-available/gitlab`
+    - `systemctl restart nginx`
+18. Check application status
+    - `sudo -u git -H bundle exec rake gitlab:check RAILS_ENV=production`
