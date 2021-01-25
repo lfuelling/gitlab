@@ -139,3 +139,10 @@ This documentation is customized to my needs. If you want to use this, you shoul
     - `systemctl restart nginx`
 18. Check application status
     - `sudo -u git -H bundle exec rake gitlab:check RAILS_ENV=production`
+19. Get a Rails console and set the root password
+    - `sudo -u git -H bundle exec rails console -e production`
+        - `user = User.where(id: 1).first`
+        - `user.password = 'secret_pass'`
+        - `user.password_confirmation = 'secret_pass'`
+        - `user.send_only_admin_changed_your_password_notification!`
+        - `user.save!`
