@@ -1,0 +1,16 @@
+canvas#starfield {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.toggle-sidebar-button,
+.close-nav-button,
+.toggle-right-sidebar-button,
+body .nav-sidebar,
+body .navbar-gitlab {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(4px) !important;
+}
