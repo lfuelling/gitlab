@@ -42,7 +42,7 @@ function formatTooltipText({ date, count }) {
   return `${contribText}<br />${dateDayName} ${dateText}`;
 }
 
-const initColorKey = () => d3.scaleLinear().range(['#acd5f2', '#254e77']).domain([0, 3]);
+const initColorKey = () => d3.scaleLinear().range(['#093356', '#003f77']).domain([0, 3]);
 
 export default class ActivityCalendar {
   constructor(
@@ -181,7 +181,7 @@ export default class ActivityCalendar {
       .attr('width', this.daySize)
       .attr('height', this.daySize)
       .attr('fill', (stamp) =>
-        stamp.count !== 0 ? this.color(Math.min(stamp.count, 40)) : '#ededed',
+        stamp.count !== 0 ? this.color(Math.min(stamp.count, 40)) : '#1d1d1d',
       )
       .attr('title', (stamp) => formatTooltipText(stamp))
       .attr('class', 'user-contrib-cell has-tooltip')
@@ -254,7 +254,7 @@ export default class ActivityCalendar {
       __('30+ contributions'),
     ];
     const keyColors = [
-      '#ededed',
+      '#1d1d1d',
       this.colorKey(0),
       this.colorKey(1),
       this.colorKey(2),
@@ -281,7 +281,7 @@ export default class ActivityCalendar {
 
   initColor() {
     const colorRange = [
-      '#ededed',
+      '#1d1d1d',
       this.colorKey(0),
       this.colorKey(1),
       this.colorKey(2),

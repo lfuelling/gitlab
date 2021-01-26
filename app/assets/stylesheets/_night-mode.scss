@@ -1,0 +1,122 @@
+/*
+
+  Yes - I have learned nothing from the pain and am doing the same thing as with Mastodon.
+
+*/
+
+canvas#starfield {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -5000;
+}
+
+.toggle-sidebar-button,
+.close-nav-button,
+.toggle-right-sidebar-button,
+body .nav-sidebar,
+body .navbar-gitlab,
+.form-control,
+.search form,
+.dropdown-menu,
+.cover-block,
+.select2-drop-mask,
+.select2-results .select2-highlighted .select2-result-label,
+.select2-container .select2-choice,
+.select2-container.select2-drop-above .select2-choice,
+.info-well,
+table.table tr th,
+.md table:not(.code) tr th,
+.gl-alert-tip,
+.labels-container,
+.gl-button.gl-button,
+.gl-button.gl-button.btn-block,
+.login-page input.gl-button.gl-button[type='submit'],
+.gl-button.gl-button.btn-default,
+.gl-button.gl-button.btn-block.btn-default,
+.login-page input.gl-button.gl-button.btn-default[type='submit'],
+.milestones,
+.row-content-block,
+.btn,
+pre,
+.bg-light,
+.ide,
+.ide .card,
+.ide .common-note-form .md-area,
+.file-holder .file-content,
+.file-title-flex-parent,
+.file-holder .file-title-flex-parent {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(4px) !important;
+}
+
+.blank-state-link {
+  background-color: rgba(0, 0, 0, 0);
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px) !important;
+    border-color: #fff;
+  }
+}
+
+.btn:hover, .btn:focus,
+.identicon,
+.identicon.bg3,
+.dropdown-toggle,
+.dropdown-menu-toggle,
+.confidential-merge-request-fork-group .dropdown-toggle,
+.confidential-merge-request-fork-group .dropdown-menu-toggle {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px) !important;
+  border-color: #fff;
+}
+
+body .navbar-gitlab .navbar-sub-nav li.active > a,
+body .navbar-gitlab .navbar-sub-nav li.active > button,
+body .navbar-gitlab .navbar-sub-nav li.dropdown.show > a,
+body .navbar-gitlab .navbar-sub-nav li.dropdown.show > button,
+body .navbar-gitlab .navbar-nav li.active > a,
+body .navbar-gitlab .navbar-nav li.active > button,
+body .navbar-gitlab .navbar-nav li.dropdown.show > a,
+body .navbar-gitlab .navbar-nav li.dropdown.show > button {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px) !important;
+  border-color: #fff;
+}
+
+.btn.btn-success,
+.navbar-sub-nav > li > a:hover,
+.participants-more .navbar-sub-nav > li > .btn-link:hover,
+.user-list-more .navbar-sub-nav > li > .btn-link:hover,
+.navbar-sub-nav > li > a:focus,
+.navbar-sub-nav > li > button:hover,
+.navbar-sub-nav > li > button:focus,
+.navbar-nav > li > a:hover,
+.participants-more .navbar-nav > li > .btn-link:hover,
+.user-list-more .navbar-nav > li > .btn-link:hover,
+.navbar-nav > li > a:focus,
+.navbar-nav > li > button:hover,
+.navbar-nav > li > button:focus,
+.gl-button.gl-button.btn-confirm,
+.gl-button.gl-button.btn-info,
+.gl-button.gl-button.btn-success,
+.gl-button.gl-button.btn-danger,
+.gl-button.gl-button.btn-warning,
+.gl-button.gl-button.btn-block.btn-confirm,
+.login-page input.gl-button.gl-button.btn-confirm[type='submit'],
+.gl-button.gl-button.btn-block.btn-info,
+.login-page input.gl-button.gl-button.btn-info[type='submit'],
+.gl-button.gl-button.btn-block.btn-success,
+.login-page input.gl-button.gl-button.btn-success[type='submit'],
+.gl-button.gl-button.btn-block.btn-danger,
+.login-page input.gl-button.gl-button.btn-danger[type='submit'],
+.gl-button.gl-button.btn-block.btn-warning,
+.login-page input.gl-button.gl-button.btn-warning[type='submit'],
+.btn-missing,
+.project-stats .nav .btn-missing,
+.project-buttons .nav .btn-missing {
+  color: #fff;
+}
