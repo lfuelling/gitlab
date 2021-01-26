@@ -84,7 +84,8 @@ body.gl-dark .navbar-gitlab .navbar-nav li.dropdown.show>button {
 .dropdown-menu li .menu-item:not(.disable-hover):hover,
 .dropdown-menu li .menu-item:active,
 .dropdown-menu li .menu-item:focus,
-.dropdown-menu li .menu-item.is-focused {
+.dropdown-menu li .menu-item.is-focused,
+.sidebar-top-level-items > li.is-showing-fly-out .sidebar-sub-level-items {
   background-color: rgba(0, 0, 0, 0.85) !important;
   backdrop-filter: blur(4px) !important;
 }
