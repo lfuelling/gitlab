@@ -167,6 +167,7 @@ module Gitlab
     config.assets.precompile << "application_utilities.css"
     config.assets.precompile << "application_utilities_dark.css"
     config.assets.precompile << "application_dark.css"
+    config.assets.precompile << "night-mode.css"
 
     config.assets.precompile << "startup/*.css"
 

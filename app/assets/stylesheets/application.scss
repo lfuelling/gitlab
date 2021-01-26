@@ -21,9 +21,6 @@
 // Styles for JS behaviors.
 @import 'behaviors';
 
-// EE-only stylesheets
-@import 'application_ee';
-
 /* print styles */
 @media print {
   @import 'print';
@@ -33,4 +30,3 @@
 @import 'startup/cloaking';
 @include cloak-startup-scss(block);
 
-@import 'night-mode';
