@@ -64,7 +64,8 @@ hr.footer-fixed,
 .devise-layout-html body .footer-container,
 .devise-layout-html body hr.footer-fixed,
 .card,
-.md table:not(.code) tbody {
+.md table:not(.code) tbody,
+.modal {
   background-color: rgba(0, 0, 0, 0.4) !important;
   backdrop-filter: blur(4px) !important;
 }
@@ -91,8 +92,9 @@ hr.footer-fixed,
 .dropdown-menu li .menu-item:active,
 .dropdown-menu li .menu-item:focus,
 .dropdown-menu li .menu-item.is-focused,
-.sidebar-top-level-items > li.is-showing-fly-out .sidebar-sub-level-items {
-  background-color: rgba(0, 0, 0, 0.85) !important;
+.sidebar-top-level-items > li.is-showing-fly-out .sidebar-sub-level-items,
+.modal-content {
+  background-color: rgba(0, 0, 0, 0.95) !important;
   backdrop-filter: blur(4px) !important;
 }
 
