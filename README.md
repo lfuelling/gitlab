@@ -151,9 +151,5 @@ This documentation is customized to my needs. If you want to use this, you shoul
 
 ### Restarting all the services
 ```
-systemctl restart gitlab-gitaly
-systemctl restart gitlab-mailroom
-systemctl restart gitlab-puma
-systemctl restart gitlab-sidekiq
-systemctl restart gitlab-workhorse
+systemctl restart gitlab-gitaly && systemctl restart gitlab-mailroom && systemctl restart gitlab-puma && systemctl restart gitlab-sidekiq && systemctl restart gitlab-workhorse
 ```
