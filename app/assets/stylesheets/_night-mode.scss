@@ -58,7 +58,11 @@ body.gl-dark .navbar-gitlab .navbar-sub-nav li.dropdown.show>button,
 body.gl-dark .navbar-gitlab .navbar-nav li.active>a,
 body.gl-dark .navbar-gitlab .navbar-nav li.active>button,
 body.gl-dark .navbar-gitlab .navbar-nav li.dropdown.show>a,
-body.gl-dark .navbar-gitlab .navbar-nav li.dropdown.show>button {
+body.gl-dark .navbar-gitlab .navbar-nav li.dropdown.show>button,
+.navbar-empty,
+hr.footer-fixed,
+.devise-layout-html body .footer-container,
+.devise-layout-html body hr.footer-fixed {
   background-color: rgba(0, 0, 0, 0.4) !important;
   backdrop-filter: blur(4px) !important;
 }
