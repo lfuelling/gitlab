@@ -93,7 +93,8 @@ hr.footer-fixed,
 .dropdown-menu li .menu-item:focus,
 .dropdown-menu li .menu-item.is-focused,
 .sidebar-top-level-items > li.is-showing-fly-out .sidebar-sub-level-items,
-.modal-content {
+.modal-content .modal-body,
+.modal-content .modal-header {
   background-color: rgba(0, 0, 0, 0.95) !important;
   backdrop-filter: blur(4px) !important;
 }
