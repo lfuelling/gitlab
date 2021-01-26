@@ -119,7 +119,14 @@ body.gl-dark .navbar-gitlab .navbar-nav li.dropdown.show>button {
 .dropdown-menu li .menu-item:not(.disable-hover):hover,
 .dropdown-menu li .menu-item:active,
 .dropdown-menu li .menu-item:focus,
-.dropdown-menu li .menu-item.is-focused {
+.dropdown-menu li .menu-item.is-focused,
+.sidebar-sub-level-items>li.active a,
+.sidebar-sub-level-items>li.active a:hover,
+.sidebar-sub-level-items>li.active .participants-more .btn-link:hover,
+.participants-more .sidebar-sub-level-items>li.active .btn-link:hover,
+.sidebar-sub-level-items>li.active .user-list-more .btn-link:hover,
+.user-list-more .sidebar-sub-level-items>li.active .btn-link:hover,
+.sidebar-sub-level-items>li.active a:focus {
   color: #fff;
   background-color: rgba(10, 10, 10, 0.85) !important;
   backdrop-filter: blur(4px) !important;
