@@ -45,7 +45,7 @@
     = stylesheet_link_tag_defer "application_utilities"
   = stylesheet_link_tag "disable_animations", media: "all" if Rails.env.test? || Gitlab.config.gitlab['disable_animations']
 
-  = stylesheet_link_tag "night-mode", media: all
+  = stylesheet_link_tag "night-mode", media: "all"
   = javascript_include_tag Gitlab.config.gitlab.url + '/-/starfield.min.js'
 
   = stylesheet_link_tag_defer "highlight/themes/#{user_color_scheme}"
