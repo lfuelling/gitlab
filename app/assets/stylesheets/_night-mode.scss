@@ -20,7 +20,6 @@ body .nav-sidebar,
 body .navbar-gitlab,
 .form-control,
 .search form,
-.dropdown-menu,
 .cover-block,
 .select2-drop-mask,
 .select2-results .select2-highlighted .select2-result-label,
@@ -47,8 +46,46 @@ pre,
 .ide .common-note-form .md-area,
 .file-holder .file-content,
 .file-title-flex-parent,
-.file-holder .file-title-flex-parent {
+.file-holder .file-title-flex-parent,
+.dropdown-toggle,
+.dropdown-menu-toggle,
+.confidential-merge-request-fork-group .dropdown-toggle,
+.confidential-merge-request-fork-group .dropdown-menu-toggle,
+body.gl-dark .navbar-gitlab .navbar-sub-nav li.active>a,
+body.gl-dark .navbar-gitlab .navbar-sub-nav li.active>button,
+body.gl-dark .navbar-gitlab .navbar-sub-nav li.dropdown.show>a,
+body.gl-dark .navbar-gitlab .navbar-sub-nav li.dropdown.show>button,
+body.gl-dark .navbar-gitlab .navbar-nav li.active>a,
+body.gl-dark .navbar-gitlab .navbar-nav li.active>button,
+body.gl-dark .navbar-gitlab .navbar-nav li.dropdown.show>a,
+body.gl-dark .navbar-gitlab .navbar-nav li.dropdown.show>button {
   background-color: rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(4px) !important;
+}
+
+.dropdown-menu,
+.dropdown-menu.show,
+.dropdown-menu li>a:not(.disable-hover):hover,
+.dropdown-menu .participants-more li>.btn-link:not(.disable-hover):hover,
+.participants-more .dropdown-menu li>.btn-link:not(.disable-hover):hover,
+.dropdown-menu .user-list-more li>.btn-link:not(.disable-hover):hover,
+.user-list-more .dropdown-menu li>.btn-link:not(.disable-hover):hover,
+.dropdown-menu li>a:active,
+.dropdown-menu li>a:focus,
+.dropdown-menu li>a.is-focused,
+.dropdown-menu li button:not(.disable-hover):hover,
+.dropdown-menu li button:active,
+.dropdown-menu li button:focus,
+.dropdown-menu li button.is-focused,
+.dropdown-menu li .gl-button.btn-link:not(.disable-hover):hover,
+.dropdown-menu li .gl-button.btn-link:active,
+.dropdown-menu li .gl-button.btn-link:focus,
+.dropdown-menu li .gl-button.btn-link.is-focused,
+.dropdown-menu li .menu-item:not(.disable-hover):hover,
+.dropdown-menu li .menu-item:active,
+.dropdown-menu li .menu-item:focus,
+.dropdown-menu li .menu-item.is-focused {
+  background-color: rgba(0, 0, 0, 0.85) !important;
   backdrop-filter: blur(4px) !important;
 }
 
@@ -64,11 +101,7 @@ pre,
 
 .btn:hover, .btn:focus,
 .identicon,
-.identicon.bg3,
-.dropdown-toggle,
-.dropdown-menu-toggle,
-.confidential-merge-request-fork-group .dropdown-toggle,
-.confidential-merge-request-fork-group .dropdown-menu-toggle {
+.identicon.bg3 {
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(4px) !important;
   border-color: #fff;
@@ -116,7 +149,9 @@ body .navbar-gitlab .navbar-nav li.dropdown.show > button {
 .gl-button.gl-button.btn-block.btn-warning,
 .login-page input.gl-button.gl-button.btn-warning[type='submit'],
 .btn-missing,
+.btn-warning,
+.btn,
 .project-stats .nav .btn-missing,
 .project-buttons .nav .btn-missing {
-  color: #fff;
+  color: #fff !important;
 }
