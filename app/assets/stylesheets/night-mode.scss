@@ -64,7 +64,14 @@ hr.footer-fixed,
 .devise-layout-html body .footer-container,
 .devise-layout-html body hr.footer-fixed,
 .card,
-.md table:not(.code) tbody {
+.md table:not(.code) tbody,
+.filtered-search-box,
+.row-content-block,
+.filtered-search-box-input-container,
+.filtered-search-token .name,
+.filtered-search-term .name,
+.filtered-search-token .value-container,
+.filtered-search-term .value-container {
   background-color: rgba(0, 0, 0, 0.4) !important;
   backdrop-filter: blur(4px) !important;
 }
@@ -100,7 +107,9 @@ hr.footer-fixed,
 .dropdown-menu li .menu-item.is-focused,
 .sidebar-top-level-items > li.is-showing-fly-out .sidebar-sub-level-items,
 .modal-content .modal-body,
-.modal-content .modal-header {
+.modal-content .modal-header,
+.modal-content,
+.emoji-menu {
   background-color: rgba(0, 0, 0, 0.95) !important;
   backdrop-filter: blur(4px) !important;
 }
