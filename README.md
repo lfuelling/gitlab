@@ -7,6 +7,8 @@ My own modified fork of GitLab.
 - night mode by default
 - streamlined setup
 
+![Screenshot of some settings page...](/screenshot.png)
+
 ## How to install
 
 This documentation is customized to my needs. If you want to use this, you should at least read the [official documentation](https://docs.gitlab.com/ee/install/installation.html) before pressing any buttons.
