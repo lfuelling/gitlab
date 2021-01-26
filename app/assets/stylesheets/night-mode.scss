@@ -64,10 +64,16 @@ hr.footer-fixed,
 .devise-layout-html body .footer-container,
 .devise-layout-html body hr.footer-fixed,
 .card,
-.md table:not(.code) tbody,
-.modal {
+.md table:not(.code) tbody {
   background-color: rgba(0, 0, 0, 0.4) !important;
   backdrop-filter: blur(4px) !important;
+}
+
+.modal,
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(4px) !important;
+  opacity: 1;
 }
 
 .dropdown-menu,
@@ -194,6 +200,8 @@ body .navbar-gitlab .navbar-nav li.dropdown.show > button {
 .btn-warning,
 .btn,
 .project-stats .nav .btn-missing,
-.project-buttons .nav .btn-missing {
+.project-buttons .nav .btn-missing,
+.shortcut-mappings th,
+.shortcut-mappings .shortcut {
   color: #fff !important;
 }
