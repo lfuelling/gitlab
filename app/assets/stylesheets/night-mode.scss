@@ -243,6 +243,7 @@ body hr.footer-fixed {
 }
 
 
-.sidebar-sub-level-items>li.active a {
+.sidebar-sub-level-items>li.active a,
+.sidebar-sub-level-items>li a:hover {
   border-right: 1px solid white !important;
 }
