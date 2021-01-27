@@ -1,6 +1,7 @@
 [Unit]
 Description=GitLab MailRoom
-After=network.target
+PartOf=gitlab.service
+After=gitlab.service
 StartLimitIntervalSec=0
 
 [Service]
@@ -10,9 +11,9 @@ Group=git
 WorkingDirectory=/home/git/gitlab
 Environment=RAILS_ENV=production
 ExecStart=/usr/local/bin/bundle exec mail_room --log-exit-as json -q -c /home/git/gitlab/config/mail_room.yml
-Restart=always
+Restart=unless-stopped
 RestartSec=2
 KillMode=process
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=gitlab.service

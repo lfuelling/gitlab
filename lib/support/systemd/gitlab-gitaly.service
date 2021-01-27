@@ -1,6 +1,7 @@
 [Unit]
 Description=GitLab Gitaly
-After=network.target
+PartOf=gitlab.service
+After=gitlab.service
 StartLimitIntervalSec=0
 
 [Service]
@@ -10,9 +11,9 @@ Group=git
 WorkingDirectory=/home/git/gitaly
 Environment=RAILS_ENV=production
 ExecStart=/home/git/gitaly/gitaly /home/git/gitaly/config.toml
-Restart=always
+Restart=unless-stopped
 RestartSec=2
 KillMode=process
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=gitlab.service

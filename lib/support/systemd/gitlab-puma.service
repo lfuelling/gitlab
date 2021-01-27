@@ -1,6 +1,7 @@
 [Unit]
 Description=GitLab Puma HTTP Server
-After=network.target
+PartOf=gitlab.service
+After=gitlab.service
 StartLimitIntervalSec=0
 
 [Service]
@@ -11,9 +12,9 @@ WorkingDirectory=/home/git/gitlab
 Environment=RAILS_ENV=production
 Environment=USE_WEB_SERVER=puma
 ExecStart=/home/git/gitlab/bin/web_puma start_foreground
-Restart=always
+Restart=unless-stopped
 RestartSec=2
 KillMode=process
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=gitlab.service
