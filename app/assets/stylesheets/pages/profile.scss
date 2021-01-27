@@ -451,4 +451,9 @@ table.u2f-registrations,
 .qr-container {
   border-radius: 2px;
   background-color: #fff;
+  height: 173px;
+  width: 173px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
