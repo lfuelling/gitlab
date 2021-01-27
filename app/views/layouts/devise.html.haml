@@ -22,9 +22,9 @@
 
               = render_if_exists 'layouts/devise_help_text'
 
-            .col-sm-4.order-1.order-sm-12.new-session-forms-container
+            .col-sm-4.order-1.order-sm-2.new-session-forms-container
               = yield
 
-            .col-sm-4
+            .col-sm-4.order-0.order-sm-3
 
       = render 'devise/shared/footer', footer_message: footer_message
