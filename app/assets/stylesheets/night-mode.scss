@@ -152,7 +152,8 @@ hr.footer-fixed,
 .sidebar-sub-level-items>li.active .user-list-more .btn-link:hover,
 .user-list-more .sidebar-sub-level-items>li.active .btn-link:hover,
 .sidebar-sub-level-items>li.active a:focus,
-.sub-section {
+.sub-section,
+.nav-sidebar.sidebar-expanded-mobile{
   color: #fff;
   background-color: rgba(10, 10, 10, 0.85) !important;
   backdrop-filter: blur(4px) !important;
@@ -229,4 +230,9 @@ body hr.footer-fixed {
 .input-group .input-group-prepend,
 .input-group .input-group-append {
   background-color: rgba(10, 10, 10, 0.4) !important;
+}
+
+
+.sidebar-sub-level-items>li.active a {
+  border-right: 1px solid white !important;
 }
