@@ -153,7 +153,15 @@ hr.footer-fixed,
 .user-list-more .sidebar-sub-level-items>li.active .btn-link:hover,
 .sidebar-sub-level-items>li.active a:focus,
 .sub-section,
-.nav-sidebar.sidebar-expanded-mobile{
+.nav-sidebar.sidebar-expanded-mobile,
+.code.white .line-numbers,
+.code.white .diff-line-num,
+.sidebar-sub-level-items>li a:hover,
+.sidebar-sub-level-items>li .participants-more .btn-link:hover,
+.participants-more .sidebar-sub-level-items>li .btn-link:hover,
+.sidebar-sub-level-items>li .user-list-more .btn-link:hover,
+.user-list-more .sidebar-sub-level-items>li .btn-link:hover,
+.sidebar-sub-level-items>li a:focus {
   color: #fff;
   background-color: rgba(10, 10, 10, 0.85) !important;
   backdrop-filter: blur(4px) !important;
