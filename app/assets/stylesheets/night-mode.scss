@@ -184,6 +184,7 @@ body .navbar-gitlab .navbar-nav li.active > a,
 body .navbar-gitlab .navbar-nav li.active > button,
 body .navbar-gitlab .navbar-nav li.dropdown.show > a,
 body .navbar-gitlab .navbar-nav li.dropdown.show > button,
+.tree-holder .tree-table tr:hover:not(.tree-truncated-warning),
 .tree-holder .tree-table tr:hover:not(.tree-truncated-warning) td {
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(4px) !important;
