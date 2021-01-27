@@ -117,22 +117,20 @@ This documentation is customized to my needs. If you want to use this, you shoul
     - `sudo -u git -H yarn install --production --pure-lockfile`
     - `sudo -u git -H bundle exec rake gitlab:assets:compile RAILS_ENV=production NODE_ENV=production`
 16. Set up systemd
+    - `cp lib/support/systemd/gitlab.service /etc/systemd/system/gitlab.service`
     - `cp lib/support/systemd/gitlab-gitaly.service /etc/systemd/system/gitlab-gitaly.service`
     - `cp lib/support/systemd/gitlab-mailroom.service /etc/systemd/system/gitlab-mailroom.service`
     - `cp lib/support/systemd/gitlab-puma.service /etc/systemd/system/gitlab-puma.service`
     - `cp lib/support/systemd/gitlab-sidekiq.service /etc/systemd/system/gitlab-sidekiq.service`
     - `cp lib/support/systemd/gitlab-workhorse.service /etc/systemd/system/gitlab-workhorse.service`
     - `systemctl daemon-reload`
+    - `systemctl enable gitlab`
     - `systemctl enable gitlab-gitaly`
     - `systemctl enable gitlab-mailroom`
     - `systemctl enable gitlab-puma`
     - `systemctl enable gitlab-sidekiq`
     - `systemctl enable gitlab-workhorse`
-    - `systemctl start gitlab-gitaly`
-    - `systemctl start gitlab-mailroom`
-    - `systemctl start gitlab-puma`
-    - `systemctl start gitlab-sidekiq`
-    - `systemctl start gitlab-workhorse`
+    - `systemctl start gitlab`
 17. Install and configure NGINX
     - `apt install nginx`
     - `cp lib/support/nginx/gitlab /etc/nginx/sites-available/gitlab`
@@ -161,4 +159,4 @@ This documentation is customized to my needs. If you want to use this, you shoul
 4. Rebuild assets
     - `sudo -u git -H bundle exec rake gitlab:assets:compile RAILS_ENV=production NODE_ENV=production`
 5. Restart all the services
-    - `systemctl restart gitlab-gitaly && systemctl restart gitlab-mailroom && systemctl restart gitlab-puma && systemctl restart gitlab-sidekiq && systemctl restart gitlab-workhorse`
+    - `systemctl restart gitlab`
