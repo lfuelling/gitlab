@@ -7,7 +7,7 @@ StartLimitIntervalSec=0
 Type=simple
 User=git
 Group=git
-WorkingDirectory=/home/git/gitlab-workhorse/
+WorkingDirectory=/home/git/gitlab/
 Environment=RAILS_ENV=production
 ExecStart=/home/git/gitlab-workhorse/gitlab-workhorse -listenUmask 0 -listenNetwork unix -listenAddr /home/git/gitlab/tmp/sockets/gitlab-workhorse.socket -authBackend http://127.0.0.1:8080 -authSocket /home/git/gitlab/tmp/sockets/gitlab.socket -documentRoot /home/git/gitlab/public
 Restart=always
