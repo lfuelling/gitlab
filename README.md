@@ -160,3 +160,5 @@ This documentation is customized to my needs. If you want to use this, you shoul
     - `sudo -u git -H bundle exec rake gitlab:assets:compile RAILS_ENV=production NODE_ENV=production`
 5. Restart all the services
     - `systemctl restart gitlab`
+6. Check service status
+    - `systemctl status gitlab-*`
