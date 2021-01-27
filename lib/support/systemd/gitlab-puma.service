@@ -1,7 +1,6 @@
 [Unit]
 Description=GitLab Puma HTTP Server
 PartOf=gitlab.service
-After=gitlab.service
 StartLimitIntervalSec=0
 
 [Service]
@@ -17,4 +16,4 @@ RestartSec=2
 KillMode=process
 
 [Install]
-WantedBy=gitlab.service
+RequiredBy=gitlab.service

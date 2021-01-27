@@ -1,6 +1,11 @@
 [Unit]
 Description=GitLab Meta Service
 After=network.target
+ConsistsOf=gitlab-gitaly.service
+ConsistsOf=gitlab-workhorse.service
+ConsistsOf=gitlab-mailroom.service
+ConsistsOf=gitlab-puma.service
+ConsistsOf=gitlab-sidekiq.service
 
 [Service]
 Type=oneshot
@@ -9,3 +14,8 @@ RemainAfterExit=yes
 
 [Install]
 WantedBy=multi-user.target
+Requires=gitlab-gitaly.service
+Requires=gitlab-workhorse.service
+Requires=gitlab-mailroom.service
+Requires=gitlab-puma.service
+Requires=gitlab-sidekiq.service
