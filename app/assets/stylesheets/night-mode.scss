@@ -224,3 +224,8 @@ body .footer-container .footer-links {
 body hr.footer-fixed {
   margin-bottom: 0 !important;
 }
+
+.input-group .input-group-prepend,
+.input-group .input-group-append {
+  background-color: rgba(10, 10, 10, 0.4) !important;
+}
