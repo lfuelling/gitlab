@@ -151,7 +151,8 @@ hr.footer-fixed,
 .participants-more .sidebar-sub-level-items>li.active .btn-link:hover,
 .sidebar-sub-level-items>li.active .user-list-more .btn-link:hover,
 .user-list-more .sidebar-sub-level-items>li.active .btn-link:hover,
-.sidebar-sub-level-items>li.active a:focus {
+.sidebar-sub-level-items>li.active a:focus,
+.sub-section {
   color: #fff;
   background-color: rgba(10, 10, 10, 0.85) !important;
   backdrop-filter: blur(4px) !important;
