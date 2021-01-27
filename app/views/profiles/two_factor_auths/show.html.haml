@@ -31,7 +31,8 @@
           = register_2fa_token.html_safe
         .row.gl-mb-3
           .col-md-4
-            = raw @qr_code
+            .qr-container
+              = raw @qr_code
           .col-md-8
             .account-well
               %p.gl-mt-0.gl-mb-0
