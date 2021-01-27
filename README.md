@@ -154,9 +154,11 @@ This documentation is customized to my needs. If you want to use this, you shoul
 1. Update repo
     - `cd /home/git/gitlab`
     - `sudo -u git -H git pull`
-2. Run migrations
+2. Check migration status
+   - `sudo -u git -H bundle exec rake db:migrate:status RAILS_ENV=production`
+3. Run migrations (if necessary)
     - `sudo -u git -H bundle exec rake db:migrate RAILS_ENV=production`
-3. Rebuild assets
+4. Rebuild assets
     - `sudo -u git -H bundle exec rake gitlab:assets:compile RAILS_ENV=production NODE_ENV=production`
-4. Restart all the services
+5. Restart all the services
     - `systemctl restart gitlab-gitaly && systemctl restart gitlab-mailroom && systemctl restart gitlab-puma && systemctl restart gitlab-sidekiq && systemctl restart gitlab-workhorse`
