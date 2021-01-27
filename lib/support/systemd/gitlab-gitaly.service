@@ -10,7 +10,7 @@ Group=git
 WorkingDirectory=/home/git/gitaly
 Environment=RAILS_ENV=production
 ExecStart=/home/git/gitaly/gitaly /home/git/gitaly/config.toml
-Restart=unless-stopped
+Restart=always
 RestartSec=2
 KillMode=process
 

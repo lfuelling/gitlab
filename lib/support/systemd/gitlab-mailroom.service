@@ -10,7 +10,7 @@ Group=git
 WorkingDirectory=/home/git/gitlab
 Environment=RAILS_ENV=production
 ExecStart=/usr/local/bin/bundle exec mail_room --log-exit-as json -q -c /home/git/gitlab/config/mail_room.yml
-Restart=unless-stopped
+Restart=always
 RestartSec=2
 KillMode=process
 

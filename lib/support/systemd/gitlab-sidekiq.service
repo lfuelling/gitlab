@@ -10,7 +10,7 @@ Group=git
 WorkingDirectory=/home/git/gitlab
 Environment=RAILS_ENV=production
 ExecStart=/home/git/gitlab/bin/sidekiq-cluster "* * * * * * * *" -P /home/git/gitlab/tmp/pids/sidekiq-cluster.pid -e $RAILS_ENV
-Restart=unless-stopped
+Restart=always
 RestartSec=2
 KillMode=process
 

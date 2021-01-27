@@ -11,7 +11,7 @@ WorkingDirectory=/home/git/gitlab
 Environment=RAILS_ENV=production
 Environment=USE_WEB_SERVER=puma
 ExecStart=/home/git/gitlab/bin/web_puma start_foreground
-Restart=unless-stopped
+Restart=always
 RestartSec=2
 KillMode=process
 
