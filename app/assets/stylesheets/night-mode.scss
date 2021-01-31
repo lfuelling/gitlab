@@ -72,7 +72,8 @@ hr.footer-fixed,
 .filtered-search-term .name,
 .filtered-search-token .value-container,
 .filtered-search-term .value-container,
-.form-actions {
+.form-actions,
+.bs-callout {
   background-color: rgba(0, 0, 0, 0.4) !important;
   backdrop-filter: blur(4px) !important;
 }
