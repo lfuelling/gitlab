@@ -3,6 +3,7 @@
 My own modified fork of GitLab.
 
 ## Features (other than upstream)
+
 - systemd support
 - night mode by default
 - streamlined setup
@@ -11,9 +12,11 @@ My own modified fork of GitLab.
 
 ## How to install
 
-This documentation is customized to my needs. If you want to use this, you should at least read the [official documentation](https://docs.gitlab.com/ee/install/installation.html) before pressing any buttons.
+This documentation is customized to my needs. If you want to use this, you should at least read
+the [official documentation](https://docs.gitlab.com/ee/install/installation.html) before pressing any buttons.
 
-**Currently all commands are set up to install v13.8! Everything is run as `root`, you need the `backports` repo on Debian.**
+**Currently all commands are set up to install v13.8! Everything is run as `root`, you need the `backports` repo on
+Debian.**
 
 1. Install dependencies
     - `apt install sudo libimage-exiftool-perl graphicsmagick zlib1g-dev libyaml-dev libssl-dev libgdbm-dev libre2-dev libreadline-dev libncurses5-dev libffi-dev curl openssh-server checkinstall libxml2-dev libxslt-dev libcurl4-openssl-dev libicu-dev logrotate rsync python-docutils pkg-config cmake runit libcurl4-openssl-dev libexpat1-dev gettext libz-dev libssl-dev libpcre2-dev build-essential`
@@ -59,7 +62,7 @@ This documentation is customized to my needs. If you want to use this, you shoul
     - `mkdir -p /var/run/redis`
     - `chown redis:redis /var/run/redis`
     - `chmod 755 /var/run/redis`
-    - `echo 'd  /var/run/redis  0755  redis  redis  10d  -' | sudo tee -a /etc/tmpfiles.d/redis.conf`
+    - `echo 'd /var/run/redis  0755  redis  redis  10d -' | sudo tee -a /etc/tmpfiles.d/redis.conf`
     - `usermod -aG redis git`
     - `systemctl restart redis-server`
 9. Install GitLab itself
@@ -152,13 +155,16 @@ This documentation is customized to my needs. If you want to use this, you shoul
 1. Update repo
     - `cd /home/git/gitlab`
     - `sudo -u git -H git pull`
-2. Check migration status
-   - `sudo -u git -H bundle exec rake db:migrate:status RAILS_ENV=production`
-3. Run migrations (if necessary)
+2. Update Dependencies
+    - `sudo -u git -H yarn install --production --pure-lockfile`
+    - `sudo -u git -H bundle install -j8 --deployment --without development test mysql aws kerberos`
+3. Check migration status
+    - `sudo -u git -H bundle exec rake db:migrate:status RAILS_ENV=production`
+4. Run migrations (if necessary)
     - `sudo -u git -H bundle exec rake db:migrate RAILS_ENV=production`
-4. Rebuild assets
+5. Rebuild assets
     - `sudo -u git -H bundle exec rake gitlab:assets:compile RAILS_ENV=production NODE_ENV=production`
-5. Restart all the services
+6. Restart all the services
     - `systemctl restart gitlab`
-6. Check service status
+7. Check service status
     - `systemctl status gitlab-*`
