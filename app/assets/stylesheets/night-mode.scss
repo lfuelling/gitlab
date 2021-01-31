@@ -79,7 +79,9 @@ hr.footer-fixed,
 .card-footer,
 .gl-card,
 .gl-card-header,
-.gl-card-footer,{
+.gl-card-footer,
+.row-content-block,
+input {
   background-color: rgba(0, 0, 0, 0.4) !important;
   backdrop-filter: blur(4px) !important;
 }
