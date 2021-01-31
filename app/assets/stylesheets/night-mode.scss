@@ -86,6 +86,10 @@ hr.footer-fixed,
   backdrop-filter: blur(4px) !important;
 }
 
+input {
+  background-color: transparent !important;
+}
+
 .modal,
 .modal-backdrop {
   background-color: rgba(0, 0, 0, 0.4) !important;
