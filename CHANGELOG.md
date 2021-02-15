@@ -2,6 +2,40 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 13.8.4 (2021-02-11)
+
+### Security (9 changes)
+
+- Cancel running and pending jobs when a project is deleted. !1220
+- Prevent Denial of Service Attack on gitlab-shell.
+- Prevent exposure of confidential issue titles in file browser.
+- Updates authorization for linting API.
+- Check user access on API merge request read actions.
+- Limit daily invitations to groups and projects.
+- Enforce the analytics enabled project setting for project-level analytics features.
+- Perform SSL verification for FortiTokenCloud Integration.
+- Prevent Server-side Request Forgery for Prometheus when secured by Google IAP.
+
+
+## 13.8.3 (2021-02-05)
+
+### Fixed (2 changes)
+
+- Revert multipart URL optimization for AWS S3. !52561
+- Fix regression with old wiki image uploads. !52656
+
+
+## 13.8.2 (2021-02-01)
+
+### Security (5 changes)
+
+- Filter sensitive GraphQL variables from logs.
+- Avoid exposing release links when the user cannot read git-tag/repository.
+- Sanitize target branch on MR page.
+- Fix DNS rebinding protection bypass when allowing an IP address in Outbound Requests setting.
+- Add routes for unmatched url for not-get requests.
+
+
 ## 13.8.1 (2021-01-26)
 
 ### Fixed (3 changes)
